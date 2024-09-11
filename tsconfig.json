@@ -18,9 +18,12 @@
       }
     ],
     "paths": {
-      "@components/*": ["./src/*"]
+      "@components/*": ["./app/presentation/components*"],
+      "@api": ["./app/infrastructure/api/api"],
+      "@types": ["./app/domain/types"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
+
