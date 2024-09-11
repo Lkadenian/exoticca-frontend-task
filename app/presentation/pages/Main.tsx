@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchTravels } from "@api";
 import { Travel } from "@types";
 import { MainContainer, ContentSection } from "@layouts";
-import { Header, Headings } from "@components";
+import { Header, Headings, SearchBar } from "@components";
 
 const Main: React.FC = () => {
   const [travels, setTravels] = useState<Travel[]>([]);
@@ -22,6 +22,7 @@ const Main: React.FC = () => {
       <Header />
       <ContentSection>
         <Headings />
+        <SearchBar />
         <ul>
           {travels.map((travel) => (
             <li key={travel.id}>

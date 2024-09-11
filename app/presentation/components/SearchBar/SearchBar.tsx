@@ -1,12 +1,26 @@
-import React from "react";
-import styles from "./Headings.module.css";
+import React, { useState } from "react";
+import styles from "./SearchBar.module.css";
+import { Button } from "@components";
 
 const SearchBar: React.FC = () => {
+  const [value, setValue] = useState("");
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
+
   return (
-    <>
-      <h1 className={styles.h1}>The places you dream of </h1>
-      <h2 className={styles.h2}>Let's live new adventures</h2>
-    </>
+    <div className={styles.searchBarContainer}>
+      <input
+        type="text"
+        value={value}
+        placeholder="Search trips"
+        className={styles.searchBarInput}
+        onChange={handleInputChange}
+        aria-label="Search trips"
+      />
+      <Button size="small">Search</Button>
+    </div>
   );
 };
 

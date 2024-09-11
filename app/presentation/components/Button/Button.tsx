@@ -2,18 +2,23 @@ import React from "react";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
-  variant: "black" | "white";
-  onClick?: () => void;
   children: React.ReactNode;
+  variant?: "black" | "white";
+  size?: "normal" | "small";
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
   variant = "black",
+  size = "normal",
   onClick,
   children,
 }) => {
   return (
-    <button className={`${styles.button} ${styles[variant]}`} onClick={onClick}>
+    <button
+      className={`${styles.button} ${styles[variant]} ${styles[size]}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

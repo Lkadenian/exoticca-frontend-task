@@ -1,17 +1,21 @@
-.h1 {
-  line-height: 40px;
-  font-size: 32px;
-  text-align: center;
-  font-weight: 500;
-  margin: 0 0 8px 0;
-  padding: 0;
+.searchBarContainer {
+  max-width: 360px;
+  width: 100%;
+  display: flex;
+  border: 1px solid var(--gray-gray);
+  justify-content: space-between;
+  border-radius: var(--radius-bg);
+  padding: 6px;
+  box-sizing: border-box;
+  margin: 24px 0;
+}
+.searchBarContainer:focus-within {
+  border-color: var(--polar-night);
 }
 
-.h2 {
-  line-height: 25px;
-  font-size: 20px;
-  text-align: center;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
+.searchBarInput {
+  border: none;
+  width: 100%;
+  outline: none;
+  padding: 0 8px 0 16px;
 }

@@ -1,5 +1,5 @@
 .button {
-  padding: 14px 20px;
+  padding: 14px 28px;
   border-radius: var(--radius-bg);
   border: none;
   font-family: inherit;
@@ -8,7 +8,13 @@
 
 .button.black {
   background-color: var(--polar-night);
+  color: var(--artic-wind);
 }
 .button.white {
   background-color: var(--artic-wind);
+  color: var(--polar-night);
+}
+.button.small {
+  padding: 9px 14px;
+  font-size: 14px;
 }
