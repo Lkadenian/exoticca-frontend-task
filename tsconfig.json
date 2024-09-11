@@ -19,7 +19,7 @@
     ],
     "paths": {
       "@components": ["./app/presentation/components"],
-      "@layouts/*": ["./app/presentation/layouts/*"],
+      "@layouts": ["./app/presentation/layouts"],
       "@api": ["./app/infrastructure/api/api"],
       "@types": ["./app/domain/types"]
     }

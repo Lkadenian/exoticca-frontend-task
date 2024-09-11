@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { fetchTravels } from "@api";
 import { Travel } from "@types";
-import MainContainer from "@layouts/MainContainer";
-import { Header } from "@components";
+import { MainContainer, ContentSection } from "@layouts";
+import { Header, Headings } from "@components";
 
 const Main: React.FC = () => {
   const [travels, setTravels] = useState<Travel[]>([]);
@@ -20,14 +20,16 @@ const Main: React.FC = () => {
   return (
     <MainContainer>
       <Header />
-      <h1>Dream Travels</h1>
-      <ul>
-        {travels.map((travel) => (
-          <li key={travel.id}>
-            <strong>{travel.title}</strong> - {travel.description}
-          </li>
-        ))}
-      </ul>
+      <ContentSection>
+        <Headings />
+        <ul>
+          {travels.map((travel) => (
+            <li key={travel.id}>
+              <strong>{travel.title}</strong> - {travel.description}
+            </li>
+          ))}
+        </ul>
+      </ContentSection>
     </MainContainer>
   );
 };
