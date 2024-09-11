@@ -3,6 +3,7 @@
   border-radius: var(--radius-md);
   display: flex;
   min-height: 206px;
+  text-align: left;
 }
 
 .travelCardImageContainer {

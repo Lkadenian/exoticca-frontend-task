@@ -9,6 +9,12 @@ export interface Travel {
   title: string;
   description: string;
   photo_url: string;
-  status: "todo" | "completed" | "in-progress";
+  status: "todo" | "done";
   itinerary: Itinerary[];
+}
+
+export enum TabNavs {
+  all,
+  upcoming,
+  completed,
 }

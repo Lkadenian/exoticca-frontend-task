@@ -3,7 +3,7 @@ import Logo from "./Logo/Logo";
 import Button from "./Button/Button";
 import Headings from "./Headings/Headings";
 import SearchBar from "./SearchBar/SearchBar";
-import ButtonGroup from "./ButtonGroup/ButtonGroup";
+import NavTabs from "./NavTabs/NavTabs";
 import TravelCard from "./TravelCard/TravelCard";
 import TravelCardList from "./TravelCardList/TravelCardList";
 
@@ -13,7 +13,7 @@ export {
   Button,
   Headings,
   SearchBar,
-  ButtonGroup,
+  NavTabs,
   TravelCard,
   TravelCardList,
 };

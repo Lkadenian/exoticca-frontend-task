@@ -14,8 +14,8 @@ export const useSearch = create<ISearch>(() => {
 });
 
 export const setSearchQuery = (newSearchQuery: string) =>
-  useSearch.setState(
-    produce((state) => {
-      state.searchQuery = newSearchQuery;
+  useSearch.setState((state) =>
+    produce(state, (draftState) => {
+      draftState.searchQuery = newSearchQuery;
     })
   );

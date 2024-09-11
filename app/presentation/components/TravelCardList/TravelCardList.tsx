@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./TravelCardList.module.css";
-import { Travel } from "@types";
+import { Travel, TabNavs } from "@types";
 import TravelCard from "../TravelCard/TravelCard";
 import { useSearch } from "@hooks/useSearch";
+import { useNavTabs } from "@hooks/useNavTabs";
 
 interface TravelCardListProps {
   travelList: Travel[];
@@ -10,14 +11,25 @@ interface TravelCardListProps {
 
 const TravelCardList: React.FC<TravelCardListProps> = ({ travelList }) => {
   const searchQuery = useSearch((state) => state.searchQuery);
+  const selectedTab = useNavTabs((state) => state.selectedTab);
 
-  const filteredTravelList = searchQuery
-    ? travelList.filter(
-        (travel) =>
-          travel.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          travel.description.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : travelList;
+  const filterTravelList = (travels: Travel[]) => {
+    return travels.filter((travel) => {
+      const matchesSearchQuery =
+        !searchQuery ||
+        travel.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        travel.description.toLowerCase().includes(searchQuery.toLowerCase());
+
+      const matchesTab =
+        selectedTab === TabNavs.all ||
+        (selectedTab === TabNavs.upcoming && travel.status === "todo") ||
+        (selectedTab === TabNavs.completed && travel.status === "done");
+
+      return matchesSearchQuery && matchesTab;
+    });
+  };
+
+  const filteredTravelList = filterTravelList(travelList);
 
   return (
     <div className={styles.travelCardList}>

@@ -3,7 +3,7 @@ import { fetchTravels } from "@api";
 import { Travel } from "@types";
 import { MainContainer, ContentSection } from "@layouts";
 import {
-  ButtonGroup,
+  NavTabs,
   Header,
   Headings,
   SearchBar,
@@ -21,16 +21,18 @@ const Main: React.FC = () => {
     });
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-
   return (
     <MainContainer>
       <Header />
       <ContentSection>
         <Headings />
         <SearchBar />
-        <ButtonGroup />
-        <TravelCardList travelList={travelList} />
+        <NavTabs />
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <TravelCardList travelList={travelList} />
+        )}
       </ContentSection>
     </MainContainer>
   );
