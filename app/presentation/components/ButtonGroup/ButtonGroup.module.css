@@ -1,0 +1,27 @@
+.buttonGroup {
+  display: flex;
+  border: 1px solid var(--gray-gray);
+  border-radius: var(--radius-bg);
+  margin: 40px 0 24px 0;
+}
+
+.buttonGroup button {
+  padding: 12px 20px;
+  text-align: center;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: var(--artic-wind);
+  border-left: 1px solid var(--gray-gray);
+  border-right: 1px solid var(--gray-gray);
+}
+
+.buttonGroup button:first-child {
+  border-top-left-radius: var(--radius-bg);
+  border-bottom-left-radius: var(--radius-bg);
+}
+
+.buttonGroup button:last-child {
+  border-top-right-radius: var(--radius-bg);
+  border-bottom-right-radius: var(--radius-bg);
+}

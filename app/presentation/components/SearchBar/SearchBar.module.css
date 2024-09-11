@@ -9,6 +9,7 @@
   box-sizing: border-box;
   margin: 24px 0;
 }
+
 .searchBarContainer:focus-within {
   border-color: var(--polar-night);
 }
@@ -18,4 +19,6 @@
   width: 100%;
   outline: none;
   padding: 0 8px 0 16px;
+  font-size: inherit;
+  font-family: inherit;
 }

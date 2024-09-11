@@ -3,5 +3,6 @@ import Logo from "./Logo/Logo";
 import Button from "./Button/Button";
 import Headings from "./Headings/Headings";
 import SearchBar from "./SearchBar/SearchBar";
+import ButtonGroup from "./ButtonGroup/ButtonGroup";
 
-export { Header, Logo, Button, Headings, SearchBar };
+export { Header, Logo, Button, Headings, SearchBar, ButtonGroup };
