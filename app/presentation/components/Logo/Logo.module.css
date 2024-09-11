@@ -1,0 +1,10 @@
+.logo {
+  height: 48px;
+  width: 48px;
+  background-color: var(--artic-wind);
+  padding: 8px;
+  border-radius: 100px;
+  box-sizing: border-box;
+  line-height: 46px;
+  text-align: center;
+}

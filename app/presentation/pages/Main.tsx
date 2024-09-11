@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { fetchTravels } from "@api";
 import { Travel } from "@types";
+import MainContainer from "@layouts/MainContainer";
+import { Header } from "@components";
 
 const Main: React.FC = () => {
   const [travels, setTravels] = useState<Travel[]>([]);
@@ -16,7 +18,8 @@ const Main: React.FC = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div>
+    <MainContainer>
+      <Header />
       <h1>Dream Travels</h1>
       <ul>
         {travels.map((travel) => (
@@ -25,7 +28,7 @@ const Main: React.FC = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </MainContainer>
   );
 };
 

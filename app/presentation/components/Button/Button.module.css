@@ -1,0 +1,14 @@
+.button {
+  padding: 14px 20px;
+  border-radius: var(--radius-bg);
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.button.black {
+  background-color: var(--polar-night);
+}
+.button.white {
+  background-color: var(--artic-wind);
+}
