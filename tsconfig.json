@@ -20,6 +20,7 @@
     "paths": {
       "@components": ["./app/presentation/components"],
       "@layouts": ["./app/presentation/layouts"],
+      "@hooks/*": ["./app/application/hooks/*"],
       "@api": ["./app/infrastructure/api/api"],
       "@types": ["./app/domain/types"]
     }
