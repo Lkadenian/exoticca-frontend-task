@@ -13,8 +13,6 @@ export interface Travel {
   itinerary: Itinerary[];
 }
 
-export enum TabNavs {
-  all,
-  upcoming,
-  completed,
-}
+export type TabNavs = "all" | "upcoming" | "completed";
+
+export type DialogType = "editTravel" | "createTravel" | "showTravel" | null;

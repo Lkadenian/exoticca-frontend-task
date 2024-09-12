@@ -8,7 +8,7 @@ type INavTabs = {
 
 export const useNavTabs = create<INavTabs>(() => {
   const initialState = {
-    selectedTab: TabNavs.all,
+    selectedTab: "all" as const,
   };
 
   return initialState;

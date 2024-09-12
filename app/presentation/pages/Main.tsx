@@ -8,6 +8,7 @@ import {
   Headings,
   SearchBar,
   TravelCardList,
+  Dialog,
 } from "@components";
 
 const Main: React.FC = () => {
@@ -21,20 +22,25 @@ const Main: React.FC = () => {
     });
   }, []);
 
+  console.log("main");
+
   return (
-    <MainContainer>
-      <Header />
-      <ContentSection>
-        <Headings />
-        <SearchBar />
-        <NavTabs />
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <TravelCardList travelList={travelList} />
-        )}
-      </ContentSection>
-    </MainContainer>
+    <>
+      <MainContainer>
+        <Header />
+        <ContentSection>
+          <Headings />
+          <SearchBar />
+          <NavTabs />
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <TravelCardList travelList={travelList} />
+          )}
+        </ContentSection>
+      </MainContainer>
+      <Dialog />
+    </>
   );
 };
 

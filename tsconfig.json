@@ -21,6 +21,7 @@
       "@components": ["./app/presentation/components"],
       "@layouts": ["./app/presentation/layouts"],
       "@hooks/*": ["./app/application/hooks/*"],
+      "@assets/*": ["./app/presentation/assets/*"],
       "@api": ["./app/infrastructure/api/api"],
       "@types": ["./app/domain/types"]
     }

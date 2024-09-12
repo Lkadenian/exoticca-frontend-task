@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./TravelCardList.module.css";
-import { Travel, TabNavs } from "@types";
+import { Travel } from "@types";
 import TravelCard from "../TravelCard/TravelCard";
 import { useSearch } from "@hooks/useSearch";
 import { useNavTabs } from "@hooks/useNavTabs";
@@ -21,9 +21,9 @@ const TravelCardList: React.FC<TravelCardListProps> = ({ travelList }) => {
         travel.description.toLowerCase().includes(searchQuery.toLowerCase());
 
       const matchesTab =
-        selectedTab === TabNavs.all ||
-        (selectedTab === TabNavs.upcoming && travel.status === "todo") ||
-        (selectedTab === TabNavs.completed && travel.status === "done");
+        selectedTab === "all" ||
+        (selectedTab === "upcoming" && travel.status === "todo") ||
+        (selectedTab === "completed" && travel.status === "done");
 
       return matchesSearchQuery && matchesTab;
     });

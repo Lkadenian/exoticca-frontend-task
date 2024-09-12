@@ -12,20 +12,20 @@ const NavTabs: React.FC = () => {
   return (
     <div className={styles.navTabs}>
       <button
-        onClick={() => handleTabClick(TabNavs.all)}
-        className={selectedTab === TabNavs.all ? styles.active : ""}
+        onClick={() => handleTabClick("all")}
+        className={selectedTab === "all" ? styles.active : ""}
       >
         All
       </button>
       <button
-        onClick={() => handleTabClick(TabNavs.upcoming)}
-        className={selectedTab === TabNavs.upcoming ? styles.active : ""}
+        onClick={() => handleTabClick("upcoming")}
+        className={selectedTab === "upcoming" ? styles.active : ""}
       >
         Upcoming
       </button>
       <button
-        onClick={() => handleTabClick(TabNavs.completed)}
-        className={selectedTab === TabNavs.completed ? styles.active : ""}
+        onClick={() => handleTabClick("completed")}
+        className={selectedTab === "completed" ? styles.active : ""}
       >
         Completed
       </button>

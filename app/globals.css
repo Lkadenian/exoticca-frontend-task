@@ -1,8 +1,10 @@
 :root {
   --polar-night: #121212;
   --artic-wind: #ffffff;
+  --dark-gray: rgba(137, 137, 137, 1);
   --gray-gray: rgba(216, 216, 216, 1);
   --gray-background: rgba(243, 243, 243, 1);
+  --black-overlay: rgba(18, 18, 18, 0.5);
 
   --radius-bg: 100px;
   --radius-md: 20px;

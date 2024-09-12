@@ -22,3 +22,7 @@
   font-size: inherit;
   font-family: inherit;
 }
+
+.searchBarInput::placeholder {
+  color: var(--dark-gray);
+}

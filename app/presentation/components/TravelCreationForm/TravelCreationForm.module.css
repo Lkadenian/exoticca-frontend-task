@@ -1,0 +1,47 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form h2 {
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.formEntry {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  gap: 8px;
+  position: relative;
+}
+
+.form input,
+.form textarea {
+  width: auto;
+  padding: 12px 16px;
+  margin: 0;
+  border: 1px solid var(--gray-gray);
+  border-radius: var(--radius-bg);
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: inherit;
+  resize: none;
+}
+
+.form textarea {
+  border-radius: var(--radius-md);
+}
+
+.addItineraryDay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
