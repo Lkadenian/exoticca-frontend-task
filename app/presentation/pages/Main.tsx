@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { fetchTravels } from "@api";
-import { Travel } from "@types";
+import React from "react";
 import { MainContainer, ContentSection } from "@layouts";
 import {
   NavTabs,
@@ -12,18 +10,6 @@ import {
 } from "@components";
 
 const Main: React.FC = () => {
-  const [travelList, setTravelList] = useState<Travel[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchTravels().then((travels) => {
-      setTravelList(travels);
-      setLoading(false);
-    });
-  }, []);
-
-  console.log("main");
-
   return (
     <>
       <MainContainer>
@@ -32,11 +18,7 @@ const Main: React.FC = () => {
           <Headings />
           <SearchBar />
           <NavTabs />
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <TravelCardList travelList={travelList} />
-          )}
+          <TravelCardList />
         </ContentSection>
       </MainContainer>
       <Dialog />

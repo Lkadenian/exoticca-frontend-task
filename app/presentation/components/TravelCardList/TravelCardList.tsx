@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./TravelCardList.module.css";
 import { Travel } from "@types";
 import TravelCard from "../TravelCard/TravelCard";
 import { useSearch } from "@hooks/useSearch";
 import { useNavTabs } from "@hooks/useNavTabs";
+import { useTravels } from "@hooks/useTravels";
 
-interface TravelCardListProps {
-  travelList: Travel[];
-}
+const TravelCardList: React.FC = () => {
+  const { fetchData, loading, travels } = useTravels((state) => state);
 
-const TravelCardList: React.FC<TravelCardListProps> = ({ travelList }) => {
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
   const searchQuery = useSearch((state) => state.searchQuery);
   const selectedTab = useNavTabs((state) => state.selectedTab);
 
@@ -29,7 +32,11 @@ const TravelCardList: React.FC<TravelCardListProps> = ({ travelList }) => {
     });
   };
 
-  const filteredTravelList = filterTravelList(travelList);
+  const filteredTravelList = filterTravelList(travels);
+
+  if (loading) {
+    return <>Loading...</>;
+  }
 
   return (
     <div className={styles.travelCardList}>

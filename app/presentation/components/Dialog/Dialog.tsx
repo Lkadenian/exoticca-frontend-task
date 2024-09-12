@@ -5,8 +5,7 @@ import { TravelCreationForm } from "@components";
 import TimesIcon from "@assets/TimesIcon";
 
 const Dialog: React.FC = () => {
-  const isOpen = useDialog((state) => state.isOpen);
-  const dialogType = useDialog((state) => state.dialogType);
+  const { isOpen, dialogType, travelId} = useDialog((state) => state);
 
   if (!isOpen || !dialogType) return null;
 
@@ -17,7 +16,9 @@ const Dialog: React.FC = () => {
           <TimesIcon />
         </button>
         <>
-          {dialogType === "editTravel" && <h3>Edit Travel</h3>}
+          {dialogType === "editTravel" && (
+            <TravelCreationForm travelId={travelId} />
+          )}
           {dialogType === "createTravel" && <TravelCreationForm />}
           {dialogType === "showTravel" && <h3>Show Travel</h3>}
         </>
