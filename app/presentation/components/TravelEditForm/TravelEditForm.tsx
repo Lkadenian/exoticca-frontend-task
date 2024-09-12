@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import styles from "./TravelCreationForm.module.css";
+import styles from "./TravelEditForm.module.css";
 import Button from "../Button/Button";
 import FormItinerarySection from "../FormItinerarySection/FormItinerarySection";
 import PlusIcon from "@assets/PlusIcon";
 import { Itinerary } from "@types";
 
-const TravelCreationForm: React.FC = () => {
+const TravelEditForm: React.FC = () => {
   const [itinerary, setItinerary] = useState<Itinerary[]>([
     { day: 1, location: "", description: "" },
   ]);
@@ -56,4 +56,4 @@ const TravelCreationForm: React.FC = () => {
   );
 };
 
-export default TravelCreationForm;
+export default TravelEditForm;

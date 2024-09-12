@@ -1,12 +1,7 @@
 import React from "react";
 import styles from "./FormItinerarySection.module.css";
 import ChevronIcon from "@assets/ChevronIcon";
-
-type Itinerary = {
-  day: number;
-  location: string;
-  description: string;
-};
+import { Itinerary } from "@types";
 
 interface FormItinerarySectionProps {
   itinerary: Itinerary[];
@@ -22,9 +17,9 @@ const FormItinerarySection: React.FC<FormItinerarySectionProps> = ({
           <div>
             <div className={styles.selectWrapper}>
               <select>
-                {[...Array(itinerary.length + 5)].map((_, i) => (
-                  <option key={i + 1} value={i + 1}>
-                    {i + 1}
+                {[...Array(itinerary.length + 5)].map((_, idx) => (
+                  <option key={idx + 1} value={idx + 1}>
+                    {idx + 1}
                   </option>
                 ))}
               </select>

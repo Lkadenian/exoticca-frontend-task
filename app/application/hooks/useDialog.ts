@@ -1,33 +1,38 @@
 import { create } from "zustand";
-import { produce } from "immer";
 import { DialogType } from "@types";
 
-type IDialog = {
+type DialogState = {
   isOpen: boolean;
   dialogType: DialogType;
+  travelId?: string;
 };
 
-export const useDialog = create<IDialog>(() => {
-  const initialState = {
-    isOpen: false,
-    dialogType: null,
-  };
+const initialState: DialogState = {
+  isOpen: false,
+  dialogType: null,
+  travelId: undefined,
+};
 
-  return initialState;
-});
+export const useDialog = create<DialogState>(() => initialState);
 
-export const openDialog = (dialogType: DialogType) =>
-  useDialog.setState((state) =>
-    produce(state, (draftState) => {
-      draftState.isOpen = true;
-      draftState.dialogType = dialogType;
-    })
-  );
+export const openCreateTravelDialog = () =>
+  useDialog.setState({
+    isOpen: true,
+    dialogType: "createTravel",
+  });
 
-export const closeDialog = () =>
-  useDialog.setState((state) =>
-    produce(state, (draftState) => {
-      draftState.isOpen = false;
-      draftState.dialogType = null;
-    })
-  );
+export const OpenEditTravelDialog = (travelId: string) =>
+  useDialog.setState({
+    isOpen: true,
+    dialogType: "editTravel",
+    travelId: travelId,
+  });
+
+export const OpenShowTravelDialog = (travelId: string) =>
+  useDialog.setState({
+    isOpen: true,
+    dialogType: "showTravel",
+    travelId: travelId,
+  });
+
+export const closeDialog = () => useDialog.setState(initialState);

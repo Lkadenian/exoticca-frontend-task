@@ -7,6 +7,7 @@ import TravelCard from "./TravelCard/TravelCard";
 import TravelCardList from "./TravelCardList/TravelCardList";
 import Dialog from "./Dialog/Dialog";
 import TravelCreationForm from "./TravelCreationForm/TravelCreationForm";
+import TravelEditForm from "./TravelEditForm/TravelEditForm";
 import FormItinerarySection from "./FormItinerarySection/FormItinerarySection";
 
 export {
@@ -20,4 +21,5 @@ export {
   Dialog,
   TravelCreationForm,
   FormItinerarySection,
+  TravelEditForm,
 };

@@ -1,21 +1,14 @@
 import { create } from "zustand";
-import { produce } from "immer";
 
-type ISearch = {
+type SearchStore = {
   searchQuery: string;
 };
 
-export const useSearch = create<ISearch>(() => {
-  const initialState = {
-    searchQuery: "",
-  };
+const initialState: SearchStore = {
+  searchQuery: "",
+};
 
-  return initialState;
-});
+export const useSearch = create<SearchStore>(() => initialState);
 
 export const setSearchQuery = (newSearchQuery: string) =>
-  useSearch.setState((state) =>
-    produce(state, (draftState) => {
-      draftState.searchQuery = newSearchQuery;
-    })
-  );
+  useSearch.setState({ searchQuery: newSearchQuery });
