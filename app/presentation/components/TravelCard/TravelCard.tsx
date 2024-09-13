@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./TravelCard.module.css";
 import { Travel } from "@types";
-import { OpenEditTravelDialog } from "@hooks/useDialog";
+import { OpenEditTravelDialog, OpenShowTravelDialog } from "@hooks/useDialog";
 import { deleteTravel } from "@hooks/useTravels";
 
 interface TravelCardProps {
@@ -22,7 +22,14 @@ const TravelCard: React.FC<TravelCardProps> = ({ travel }) => {
         <div className={styles.travelCardTitle}>{travel.title}</div>
         <div className={styles.travelCardDescription}>{travel.description}</div>
         <div className={styles.travelCardLinks}>
-          <button className={styles.linkButton}>See details</button>
+          <button
+            className={styles.linkButton}
+            onClick={() => {
+              OpenShowTravelDialog(travel.id);
+            }}
+          >
+            See trip details
+          </button>
           <div className={styles.rightAlignedLinks}>
             <button
               className={styles.linkButton}

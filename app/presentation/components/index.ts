@@ -7,6 +7,7 @@ import TravelCardList from "./TravelCardList/TravelCardList";
 import Dialog from "./Dialog/Dialog";
 import TravelForm from "./TravelForm/TravelForm";
 import FormItinerarySection from "./FormItinerarySection/FormItinerarySection";
+import TravelDetail from "./TravelDetail/TravelDetail";
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   Dialog,
   FormItinerarySection,
   TravelForm,
+  TravelDetail,
 };

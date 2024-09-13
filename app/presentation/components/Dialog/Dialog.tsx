@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Dialog.module.css";
 import { useDialog, closeDialog } from "@hooks/useDialog";
-import { TravelForm } from "@components";
+import { TravelForm, TravelDetail } from "@components";
 import TimesIcon from "@assets/TimesIcon";
 import { addTravel, editTravel } from "@hooks/useTravels";
 
@@ -27,7 +27,9 @@ const Dialog: React.FC = () => {
               travelId={travelId}
             />
           )}
-          {dialogType === "showTravel" && <h3>Show Travel</h3>}
+          {dialogType === "showTravel" && travelId && (
+            <TravelDetail travelId={travelId} />
+          )}
         </>
       </div>
       <div className={styles.modalOverlay} onClick={closeDialog}></div>

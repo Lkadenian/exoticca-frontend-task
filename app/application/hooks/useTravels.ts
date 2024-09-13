@@ -67,3 +67,15 @@ export const deleteTravel = (travelId: string) => {
     })
   );
 };
+
+export const markTravelAsCompleted = (travelId: string) => {
+  const editingTravelIndex = useTravels
+    .getState()
+    .travels.findIndex((travel) => travel.id === travelId);
+
+  useTravels.setState((state) =>
+    produce(state, (draftState) => {
+      draftState.travels[editingTravelIndex].status = "done";
+    })
+  );
+};

@@ -5,7 +5,6 @@ import { setSearchQuery } from "@hooks/useSearch";
 
 const SearchBar: React.FC = () => {
   const [value, setValue] = useState("");
-  console.log("search render");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);

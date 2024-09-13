@@ -4,7 +4,7 @@ import { Hanken_Grotesk } from "next/font/google";
 
 const globalFont = Hanken_Grotesk({
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["500"],
 });
 
 export const metadata: Metadata = {

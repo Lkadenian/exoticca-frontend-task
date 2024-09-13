@@ -1,0 +1,100 @@
+.travelDetailImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 250px;
+}
+.travelDetailImageContainer img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.travelDetailInfo {
+  margin-top: 250px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.travelDetailTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.travelDetailTitle h2 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.travelDetailInfo hr {
+  border: none;
+  border-top: solid 1px var(--gray-gray);
+  width: 100%;
+}
+
+.travelDetailInfo h3 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.travelDetailStatus {
+  color: var(--dark-gray);
+}
+
+.travelDetailStatus button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.travelDetailStatus > * {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.itineraryItem {
+  position: relative;
+  padding-left: 32px;
+}
+
+.itineraryItem::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: var(--polar-night);
+}
+
+.itineraryItem:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 12px;
+  bottom: -42px;
+  width: 2px;
+  background-color: var(--polar-night);
+}
+
+.itineraryDescription {
+  color: var(--dark-gray);
+}
