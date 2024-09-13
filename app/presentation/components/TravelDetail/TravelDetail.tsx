@@ -9,7 +9,7 @@ import CheckBlank from "@assets/CheckBlank";
 import CheckGreen from "@assets/CheckGreen";
 
 interface TravelCardProps {
-  travelId: string;
+  travelId: number;
 }
 
 const TravelDetail: React.FC<TravelCardProps> = ({ travelId }) => {

@@ -10,7 +10,7 @@ import { getTravelById } from "@hooks/useTravels";
 interface TravelFormProps {
   headingText: string;
   action: (travel: Travel) => void;
-  travelId?: string;
+  travelId?: number;
 }
 
 const TravelForm: React.FC<TravelFormProps> = ({

@@ -35,12 +35,12 @@ export const setTravels = (travels: Travel[]) =>
 export const setLoading = (loading: boolean) =>
   useTravels.setState((state) => ({ ...state, loading: loading }));
 
-export const getTravelById = (travelId: string) =>
+export const getTravelById = (travelId: number) =>
   useTravels.getState().travels.find((travel) => travel.id === travelId);
 
 export const addTravel = (travel: Travel) => {
-  const newId = parseInt(useTravels.getState().travels.at(-1)?.id || "1") + 1;
-  const newTravel = { ...travel, id: newId.toString() };
+  const newId = (useTravels.getState().travels.at(-1)?.id || 0) + 1;
+  const newTravel = { ...travel, id: newId };
   useTravels.setState((state) => ({ travels: [...state.travels, newTravel] }));
 };
 
@@ -56,7 +56,7 @@ export const editTravel = (editingTravel: Travel) => {
   );
 };
 
-export const deleteTravel = (travelId: string) => {
+export const deleteTravel = (travelId: number) => {
   const deletingTravelIndex = useTravels
     .getState()
     .travels.findIndex((travel) => travel.id === travelId);
@@ -68,7 +68,7 @@ export const deleteTravel = (travelId: string) => {
   );
 };
 
-export const markTravelAsCompleted = (travelId: string) => {
+export const markTravelAsCompleted = (travelId: number) => {
   const editingTravelIndex = useTravels
     .getState()
     .travels.findIndex((travel) => travel.id === travelId);

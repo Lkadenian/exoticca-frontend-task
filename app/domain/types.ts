@@ -5,7 +5,7 @@ export interface Itinerary {
 }
 
 export interface Travel {
-  id: string;
+  id: number;
   title: string;
   description: string;
   photo_url: string;
