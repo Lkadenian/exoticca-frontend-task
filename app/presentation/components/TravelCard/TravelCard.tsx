@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./TravelCard.module.css";
 import { Travel } from "@types";
 import { OpenEditTravelDialog } from "@hooks/useDialog";
+import { deleteTravel } from "@hooks/useTravels";
 
 interface TravelCardProps {
   travel: Travel;
@@ -31,7 +32,12 @@ const TravelCard: React.FC<TravelCardProps> = ({ travel }) => {
             >
               Edit
             </button>
-            <button className={`${styles.linkButton} ${styles.redLinkButton}`}>
+            <button
+              className={`${styles.linkButton} ${styles.redLinkButton}`}
+              onClick={() => {
+                deleteTravel(travel.id);
+              }}
+            >
               Delete
             </button>
           </div>

@@ -55,3 +55,15 @@ export const editTravel = (editingTravel: Travel) => {
     })
   );
 };
+
+export const deleteTravel = (travelId: string) => {
+  const deletingTravelIndex = useTravels
+    .getState()
+    .travels.findIndex((travel) => travel.id === travelId);
+
+  useTravels.setState((state) =>
+    produce(state, (draftState) => {
+      draftState.travels.splice(deletingTravelIndex, 1);
+    })
+  );
+};
