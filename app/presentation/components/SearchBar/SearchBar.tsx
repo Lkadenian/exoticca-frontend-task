@@ -13,6 +13,12 @@ const SearchBar: React.FC = () => {
     setSearchQuery(value);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      setSearchQuery(value);
+    }
+  };
+
   return (
     <div className={styles.searchBarContainer}>
       <input
@@ -21,7 +27,7 @@ const SearchBar: React.FC = () => {
         placeholder="Search trips"
         className={styles.searchBarInput}
         onChange={handleInputChange}
-        aria-label="Search trips"
+        onKeyDown={handleKeyDown}
       />
       <Button onClick={handleSearchClick} size="small">
         Search

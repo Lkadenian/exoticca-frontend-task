@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Travel } from "@types";
+import { Travel, TravelStatus } from "@types";
 import { fetchTravels } from "@api";
 import { produce } from "immer";
 
@@ -68,14 +68,14 @@ export const deleteTravel = (travelId: number) => {
   );
 };
 
-export const markTravelAsCompleted = (travelId: number) => {
+export const changeTravelStatus = (travelId: number, status: TravelStatus) => {
   const editingTravelIndex = useTravels
     .getState()
     .travels.findIndex((travel) => travel.id === travelId);
 
   useTravels.setState((state) =>
     produce(state, (draftState) => {
-      draftState.travels[editingTravelIndex].status = "done";
+      draftState.travels[editingTravelIndex].status = status;
     })
   );
 };

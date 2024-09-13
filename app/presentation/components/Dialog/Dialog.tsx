@@ -8,12 +8,16 @@ import { addTravel, editTravel } from "@hooks/useTravels";
 const Dialog: React.FC = () => {
   const { isOpen, dialogType, travelId } = useDialog((state) => state);
 
-  if (!isOpen || !dialogType) return null;
+  if (!isOpen) return null;
 
   return (
     <>
       <div className={styles.dialogBox}>
-        <button className={styles.closeButton} onClick={closeDialog}>
+        <button
+          className={styles.closeButton}
+          onClick={closeDialog}
+          aria-label="close dialog"
+        >
           <TimesIcon />
         </button>
         <>

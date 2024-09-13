@@ -9,10 +9,12 @@ export interface Travel {
   title: string;
   description: string;
   photo_url: string;
-  status: "todo" | "done";
+  status: TravelStatus;
   itinerary: Itinerary[];
   introduction?: string;
 }
+
+export type TravelStatus = "todo" | "done";
 
 export type TabNavs = "all" | "upcoming" | "completed";
 

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./TravelDetail.module.css";
 import {
   getTravelById,
-  markTravelAsCompleted,
+  changeTravelStatus,
   useTravels,
 } from "@hooks/useTravels";
 import CheckBlank from "@assets/CheckBlank";
@@ -22,15 +22,15 @@ const TravelDetail: React.FC<TravelCardProps> = ({ travelId }) => {
 
   const getStatusElement = () =>
     travel.status === "todo" ? (
-      <button onClick={() => markTravelAsCompleted(travel.id)}>
+      <button onClick={() => changeTravelStatus(travel.id, "done")}>
         <CheckBlank />
         Mark as completed
       </button>
     ) : (
-      <div>
+      <button onClick={() => changeTravelStatus(travel.id, "todo")}>
         <CheckGreen />
         Completed
-      </div>
+      </button>
     );
 
   return (

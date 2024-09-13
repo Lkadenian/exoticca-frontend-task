@@ -15,7 +15,9 @@
   transform: translate(-50%, -50%);
   background-color: var(--artic-wind);
   box-sizing: border-box;
-  width: 640px;
+  max-width: 640px;
+  min-width: 400px;
+  width: auto;
   border-radius: var(--radius-md);
   z-index: 3;
   max-height: 90vh;

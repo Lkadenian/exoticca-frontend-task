@@ -35,7 +35,11 @@ const FormItinerarySection: React.FC<FormItinerarySectionProps> = ({
 
   return (
     <>
-      <button className={styles.addItineraryDay} onClick={addItinerary}>
+      <button
+        className={styles.addItineraryDay}
+        onClick={addItinerary}
+        aria-label="add itinerary slot"
+      >
         <PlusIcon />
       </button>
       <label>Day by day itinerary</label>

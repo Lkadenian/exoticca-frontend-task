@@ -11,7 +11,7 @@
   position: relative;
 }
 
-.travelCardImage {
+.travelCardImageContainer img {
   position: absolute;
   left: 0;
   top: 0;
@@ -45,7 +45,7 @@
   align-items: center;
 }
 
-.linkButton {
+.travelCardLinks button {
   background: none;
   border: none;
   cursor: pointer;
@@ -62,4 +62,19 @@
 .rightAlignedLinks {
   display: flex;
   gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .travelCard {
+    flex-direction: column;
+  }
+  .travelCardImageContainer {
+    flex: none;
+    position: relative;
+    height: 220px;
+  }
+  .travelCardImageContainer img {
+    border-top-right-radius: var(--radius-md);
+    border-bottom-left-radius: initial;
+  }
 }

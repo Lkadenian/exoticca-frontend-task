@@ -45,7 +45,7 @@ const TravelCardList: React.FC = () => {
           <TravelCard key={`${idx}-${travel.id}`} travel={travel} />
         ))
       ) : (
-        <>No results found</>
+        <>No trips found</>
       )}
     </div>
   );
