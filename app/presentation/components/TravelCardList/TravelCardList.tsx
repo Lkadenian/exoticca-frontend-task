@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./TravelCardList.module.css";
 import { Travel } from "@types";
-import TravelCard from "../TravelCard/TravelCard";
+import { TravelCard } from "@components";
 import { useSearch } from "@hooks/useSearch";
 import { useNavTabs } from "@hooks/useNavTabs";
 import { useTravels } from "@hooks/useTravels";
@@ -19,7 +19,7 @@ const TravelCardList: React.FC = () => {
   const filterTravelList = (travels: Travel[]) => {
     return travels.filter((travel) => {
       const matchesSearchQuery =
-        !searchQuery ||
+        searchQuery === "" ||
         travel.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         travel.description.toLowerCase().includes(searchQuery.toLowerCase());
 

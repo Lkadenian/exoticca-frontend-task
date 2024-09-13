@@ -6,10 +6,10 @@ type TabNavsStore = {
 };
 
 const initialState: TabNavsStore = {
-  selectedTab: "all" as const,
+  selectedTab: "all",
 };
 
 export const useNavTabs = create<TabNavsStore>(() => initialState);
 
-export const setSearchQuery = (newSelectedTab: TabNavs) =>
+export const setSelectedTab = (newSelectedTab: TabNavs) =>
   useNavTabs.setState({ selectedTab: newSelectedTab });

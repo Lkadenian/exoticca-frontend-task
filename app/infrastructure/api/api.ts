@@ -1,13 +1,13 @@
 import axios from "axios";
-import { setTravels } from "@hooks/useTravels";
+import { Travel } from "@types";
 
 const API_URL =
   "https://my-json-server.typicode.com/mariosanz92/dream-travels-data/travels";
 
-export const fetchTravels = async () => {
+export const fetchTravels = async (): Promise<Travel[]> => {
   try {
     const response = await axios.get(API_URL);
-    setTravels(response.data);
+    return response.data;
   } catch (error) {
     console.error("Error fetching travels:", error);
     throw new Error("Failed to fetch travels");

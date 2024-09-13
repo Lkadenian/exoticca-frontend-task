@@ -49,8 +49,9 @@ const TravelForm: React.FC<TravelFormProps> = ({
       <h2>{headingText}</h2>
 
       <div>
-        <label>Travel Name</label>
+        <label htmlFor="travelName">Travel Name</label>
         <input
+          id="travelName"
           type="text"
           value={travel.title}
           onChange={(e) =>
@@ -60,8 +61,9 @@ const TravelForm: React.FC<TravelFormProps> = ({
       </div>
 
       <div>
-        <label>Introduction (max. 240 characters)</label>
+        <label htmlFor="introduction">Introduction (max. 240 characters)</label>
         <textarea
+          id="introduction"
           maxLength={240}
           rows={2}
           value={travel.introduction}
@@ -71,8 +73,9 @@ const TravelForm: React.FC<TravelFormProps> = ({
         />
       </div>
       <div>
-        <label>Description</label>
+        <label htmlFor="description">Description</label>
         <textarea
+          id="description"
           rows={6}
           value={travel.description}
           onChange={(e) =>
@@ -81,8 +84,9 @@ const TravelForm: React.FC<TravelFormProps> = ({
         />
       </div>
       <div>
-        <label>Image</label>
+        <label htmlFor="image">Image</label>
         <input
+          id="image"
           type="text"
           value={travel.photo_url}
           onChange={(e) =>

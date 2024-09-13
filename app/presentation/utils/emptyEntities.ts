@@ -7,7 +7,7 @@ export const emptyItinerary: Itinerary = {
 };
 
 export const emptyTravel: Travel = {
-  id: "",
+  id: 1,
   title: "",
   description: "",
   photo_url: "",

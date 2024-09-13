@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./NavTabs.module.css";
-import { setSearchQuery, useNavTabs } from "@hooks/useNavTabs";
+import { setSelectedTab, useNavTabs } from "@hooks/useNavTabs";
 import { TabNavs } from "@types";
 
 const NavTabs: React.FC = () => {
   const handleTabClick = (tab: TabNavs) => {
-    setSearchQuery(tab);
+    setSelectedTab(tab);
   };
   const selectedTab = useNavTabs((state) => state.selectedTab);
-
+  console.log("selectedTab", selectedTab);
   return (
     <div className={styles.navTabs}>
       <button

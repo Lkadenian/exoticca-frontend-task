@@ -12,9 +12,13 @@ type TravelsStore = {
 
 const fetchData = async () => {
   const storedTravels = useTravels.getState().travels;
-  const res = storedTravels.length > 1 ? storedTravels : await fetchTravels();
+
+  if (!storedTravels.length) {
+    const fetchedTravels = await fetchTravels();
+    setTravels(fetchedTravels);
+  }
+
   setLoading(false);
-  return res;
 };
 
 const initialState: TravelsStore = {
