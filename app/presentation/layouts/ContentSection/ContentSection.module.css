@@ -4,3 +4,20 @@
   flex-direction: column;
   align-items: center;
 }
+.contentSection > h1 {
+  line-height: 40px;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+
+.contentSection > h2 {
+  line-height: 25px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}

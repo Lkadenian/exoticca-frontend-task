@@ -3,7 +3,6 @@ import { MainContainer, ContentSection } from "@layouts";
 import {
   NavTabs,
   Header,
-  Headings,
   SearchBar,
   TravelCardList,
   Dialog,
@@ -15,7 +14,8 @@ const Main: React.FC = () => {
       <MainContainer>
         <Header />
         <ContentSection>
-          <Headings />
+          <h1>The places you dream of </h1>
+          <h2>Let's live new adventures</h2>
           <SearchBar />
           <NavTabs />
           <TravelCardList />
