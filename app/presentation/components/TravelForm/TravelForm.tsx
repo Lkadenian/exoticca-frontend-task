@@ -1,28 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import { Travel, Itinerary } from "@types";
 import FormItinerarySection from "../FormItinerarySection/FormItinerarySection";
 import { closeDialog } from "@hooks/useDialog";
+import styles from "./TravelForm.module.css";
+import { emptyTravel } from "../../utils/emptyEntities";
+import { getTravelById } from "@hooks/useTravels";
 
-const emptyItinerary: Itinerary = {
-  day: 1,
-  location: "",
-  description: "",
-};
+interface TravelFormProps {
+  headingText: string;
+  action: (travel: Travel) => void;
+  travelId?: string;
+}
 
-const emptyTravel: Travel = {
-  id: "",
-  title: "",
-  description: "",
-  photo_url: "",
-  status: "todo",
-  itinerary: [emptyItinerary],
-  introduction: "",
-};
-/*
-const TravelCreationForm: React.FC = () => {
+const TravelForm: React.FC<TravelFormProps> = ({
+  headingText,
+  action,
+  travelId,
+}) => {
   const [travel, setTravel] = useState<Travel>(emptyTravel);
   const [erorrMessage, setErorrMessage] = useState<string>();
+
+  useEffect(() => {
+    if (travelId) {
+      const travelForEdit = getTravelById(travelId);
+      travelForEdit && setTravel(travelForEdit);
+    }
+  }, [travelId]);
 
   const setItinerary = (itinerary: Itinerary[]) =>
     setTravel((prev) => ({ ...prev, itinerary }));
@@ -41,8 +45,8 @@ const TravelCreationForm: React.FC = () => {
   };
 
   return (
-    <Form>
-      <h2>Create a trip</h2>
+    <div className={styles.form}>
+      <h2>{headingText}</h2>
 
       <div>
         <label>Travel Name</label>
@@ -66,7 +70,6 @@ const TravelCreationForm: React.FC = () => {
           }
         />
       </div>
-
       <div>
         <label>Description</label>
         <textarea
@@ -77,7 +80,6 @@ const TravelCreationForm: React.FC = () => {
           }
         />
       </div>
-
       <div>
         <label>Image</label>
         <input
@@ -88,22 +90,20 @@ const TravelCreationForm: React.FC = () => {
           }
         />
       </div>
-
       <div>
         <FormItinerarySection
           itinerary={travel.itinerary}
           setItinerary={setItinerary}
         />
       </div>
-
-      {erorrMessage && <div>{erorrMessage}</div>}
-
+      {erorrMessage && (
+        <div className={styles.errorMessage}>{erorrMessage}</div>
+      )}
       <div>
         <Button onClick={() => handleSave()}>Save</Button>
       </div>
-    </Form>
+    </div>
   );
 };
 
-export default TravelCreationForm;
-*/
+export default TravelForm;

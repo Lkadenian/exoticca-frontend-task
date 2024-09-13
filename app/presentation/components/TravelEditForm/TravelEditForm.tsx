@@ -1,59 +1,51 @@
-import React, { useState } from "react";
-import styles from "./TravelEditForm.module.css";
+import React from "react";
 import Button from "../Button/Button";
 import FormItinerarySection from "../FormItinerarySection/FormItinerarySection";
-import PlusIcon from "@assets/PlusIcon";
-import { Itinerary } from "@types";
+import { getTravelById } from "@hooks/useTravels";
 
-const TravelEditForm: React.FC = () => {
-  const [itinerary, setItinerary] = useState<Itinerary[]>([
-    { day: 1, location: "", description: "" },
-  ]);
+interface TravelEditFormProps {
+  travelId: string;
+}
 
-  const addItinerary = () => {
-    setItinerary([
-      ...itinerary,
-      { day: itinerary.length + 1, location: "", description: "" },
-    ]);
-  };
+const TravelEditForm: React.FC<TravelEditFormProps> = ({ travelId }) => {
+  const travel = getTravelById(travelId);
 
+  if (!travel) {
+    return <>Trip not found</>;
+  }
+  return <>Trip not found</>;
+  /*
   return (
-    <div className={styles.form}>
       <h2>Create a trip</h2>
 
-      <div className={styles.formEntry}>
+      <div>
         <label>Travel Name</label>
-        <input type="text" />
+        <input type="text" defaultValue={travel.title} />
       </div>
 
-      <div className={styles.formEntry}>
+      <div>
         <label>Introduction (max. 240 characters)</label>
-        <textarea maxLength={240} rows={2} />
+        <textarea maxLength={240} rows={2} defaultValue={travel.introduction} />
       </div>
 
-      <div className={styles.formEntry}>
+      <div>
         <label>Description</label>
-        <textarea rows={6} />
+        <textarea rows={6} defaultValue={travel.description} />
       </div>
 
-      <div className={styles.formEntry}>
+      <div>
         <label>Image</label>
-        <input type="text" />
+        <input type="text" defaultValue={travel.photo_url} />
       </div>
 
-      <div className={styles.formEntry}>
-        <button className={styles.addItineraryDay} onClick={addItinerary}>
-          <PlusIcon />
-        </button>
-        <label>Day by day itinerary</label>
-        <FormItinerarySection itinerary={itinerary} />
+      <div>
+        <FormItinerarySection itinerary={travel.itinerary} setItinerary={} />
       </div>
 
       <div>
         <Button>Save</Button>
       </div>
-    </div>
-  );
+  );*/
 };
 
 export default TravelEditForm;

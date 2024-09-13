@@ -5,6 +5,7 @@
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
+  width: fit-content;
 }
 
 .button.black {

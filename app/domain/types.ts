@@ -11,6 +11,7 @@ export interface Travel {
   photo_url: string;
   status: "todo" | "done";
   itinerary: Itinerary[];
+  introduction?: string;
 }
 
 export type TabNavs = "all" | "upcoming" | "completed";

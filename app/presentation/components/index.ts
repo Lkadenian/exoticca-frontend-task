@@ -6,8 +6,7 @@ import NavTabs from "./NavTabs/NavTabs";
 import TravelCard from "./TravelCard/TravelCard";
 import TravelCardList from "./TravelCardList/TravelCardList";
 import Dialog from "./Dialog/Dialog";
-import TravelCreationForm from "./TravelCreationForm/TravelCreationForm";
-import TravelEditForm from "./TravelEditForm/TravelEditForm";
+import TravelForm from "./TravelForm/TravelForm";
 import FormItinerarySection from "./FormItinerarySection/FormItinerarySection";
 
 export {
@@ -19,7 +18,6 @@ export {
   TravelCard,
   TravelCardList,
   Dialog,
-  TravelCreationForm,
   FormItinerarySection,
-  TravelEditForm,
+  TravelForm,
 };

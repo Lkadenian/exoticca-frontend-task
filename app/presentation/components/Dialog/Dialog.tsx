@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./Dialog.module.css";
 import { useDialog, closeDialog } from "@hooks/useDialog";
-import { TravelCreationForm } from "@components";
+import { TravelForm } from "@components";
 import TimesIcon from "@assets/TimesIcon";
+import { addTravel, editTravel } from "@hooks/useTravels";
 
 const Dialog: React.FC = () => {
-  const { isOpen, dialogType, travelId} = useDialog((state) => state);
+  const { isOpen, dialogType, travelId } = useDialog((state) => state);
 
   if (!isOpen || !dialogType) return null;
 
@@ -16,10 +17,16 @@ const Dialog: React.FC = () => {
           <TimesIcon />
         </button>
         <>
-          {dialogType === "editTravel" && (
-            <TravelCreationForm travelId={travelId} />
+          {dialogType === "createTravel" && (
+            <TravelForm headingText="Create a trip" action={addTravel} />
           )}
-          {dialogType === "createTravel" && <TravelCreationForm />}
+          {dialogType === "editTravel" && (
+            <TravelForm
+              headingText="Edit a trip"
+              action={editTravel}
+              travelId={travelId}
+            />
+          )}
           {dialogType === "showTravel" && <h3>Show Travel</h3>}
         </>
       </div>
