@@ -9,6 +9,7 @@ import { getTravelById } from "@hooks/useTravels";
 
 interface TravelFormProps {
   headingText: string;
+  // eslint-disable-next-line no-unused-vars
   action: (travel: Travel) => void;
   travelId?: number;
 }

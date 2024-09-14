@@ -6,6 +6,7 @@ import PlusIcon from "@assets/PlusIcon";
 
 interface FormItinerarySectionProps {
   itinerary: Itinerary[];
+  // eslint-disable-next-line no-unused-vars
   setItinerary: (itinerary: Itinerary[]) => void;
 }
 

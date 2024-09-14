@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  render,
-  screen,
-  fireEvent,
-  act,
-  waitFor,
-} from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import TravelDetail from "./TravelDetail";
 import { getTravelById, changeTravelStatus } from "@hooks/useTravels";
 import { mockTravels } from "@domain/mockData";

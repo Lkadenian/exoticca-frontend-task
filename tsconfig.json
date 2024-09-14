@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -10,7 +14,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "incremental": true,
     "plugins": [
       {
@@ -18,16 +22,36 @@
       }
     ],
     "paths": {
-      "@components": ["./app/presentation/components"],
-      "@layouts": ["./app/presentation/layouts"],
-      "@hooks/*": ["./app/application/hooks/*"],
-      "@assets/*": ["./app/presentation/assets/*"],
-      "@api": ["./app/infrastructure/api/api"],
-      "@types": ["./app/domain/types"],
-      "@domain/*": ["./app/domain/*"]
+      "@components": [
+        "./app/presentation/components"
+      ],
+      "@layouts": [
+        "./app/presentation/layouts"
+      ],
+      "@hooks/*": [
+        "./app/application/hooks/*"
+      ],
+      "@assets/*": [
+        "./app/presentation/assets/*"
+      ],
+      "@api": [
+        "./app/infrastructure/api/api"
+      ],
+      "@types": [
+        "./app/domain/types"
+      ],
+      "@domain/*": [
+        "./app/domain/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
-
