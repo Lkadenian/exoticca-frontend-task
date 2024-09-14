@@ -1,7 +1,12 @@
 import type { Config } from "jest";
+import nextJest from "next/jest.js";
+
+const createJestConfig = nextJest({
+  dir: "./",
+});
 
 const config: Config = {
-  preset: "ts-jest",
+  clearMocks: true,
   testEnvironment: "jsdom",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {
@@ -16,15 +21,15 @@ const config: Config = {
   },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   transform: {
-    "^.+\\.(ts|tsx)$": [
-      "ts-jest",
-      {
-        tsconfig: "tsconfig.json",
-      },
-    ],
+    "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { presets: ["next/babel"] }],
   },
   testMatch: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(spec|test).ts?(x)"],
+  collectCoverageFrom: [
+    "<rootDir>/app/presentation/components/**/*.{ts,tsx,js,jsx}",
+    "<rootDir>/app/application/hooks/**/*.{ts,tsx,js,jsx}",
+  ],
+  coverageProvider: "v8",
 };
 
-export default config;
+export default createJestConfig(config);
 

@@ -1,5 +1,5 @@
 import { renderHook, act } from "@testing-library/react";
-import { useNavTabs, setSearchQuery } from "@hooks/useNavTabs";
+import { useNavTabs, setSelectedTab } from "@hooks/useNavTabs";
 import { TabNavs } from "@types";
 
 describe("useNavTabs store", () => {
@@ -14,7 +14,7 @@ describe("useNavTabs store", () => {
     const newSelectedTab: TabNavs = "upcoming";
 
     act(() => {
-      setSearchQuery(newSelectedTab);
+      setSelectedTab(newSelectedTab);
     });
 
     expect(result.current.selectedTab).toBe(newSelectedTab);

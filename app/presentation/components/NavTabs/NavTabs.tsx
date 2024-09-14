@@ -8,7 +8,7 @@ const NavTabs: React.FC = () => {
     setSelectedTab(tab);
   };
   const selectedTab = useNavTabs((state) => state.selectedTab);
-  console.log("selectedTab", selectedTab);
+
   return (
     <div className={styles.navTabs}>
       <button

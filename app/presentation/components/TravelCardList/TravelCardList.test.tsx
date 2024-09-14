@@ -90,4 +90,40 @@ describe("TravelCardList Component", () => {
       travels.length
     );
   });
+
+  it("should find matching TravelCard by search query", async () => {
+    const travels = mockTravels;
+
+    mockedUseTravels.mockReturnValue({
+      fetchData: mockFetchData,
+      loading: false,
+      travels,
+    });
+
+    mockedUseSearch.mockReturnValue("Portugal");
+
+    mockedUseTabNavs.mockReturnValue("all");
+
+    render(<TravelCardList />);
+
+    expect(await screen.findAllByText("TravelCard")).toHaveLength(1);
+  });
+
+  it("should find matching TravelCard by selected status", async () => {
+    const travels = mockTravels;
+
+    mockedUseTravels.mockReturnValue({
+      fetchData: mockFetchData,
+      loading: false,
+      travels,
+    });
+
+    mockedUseSearch.mockReturnValue("");
+
+    mockedUseTabNavs.mockReturnValue("completed");
+
+    render(<TravelCardList />);
+
+    expect(await screen.findAllByText("TravelCard")).toHaveLength(1);
+  });
 });

@@ -7,7 +7,7 @@ const mockedUseTabNavs = jest.fn();
 
 jest.mock("@hooks/useNavTabs", () => ({
   useNavTabs: () => mockedUseTabNavs(),
-  setSearchQuery: jest.fn(),
+  setSelectedTab: jest.fn(),
 }));
 
 describe("NavTabs Component", () => {
