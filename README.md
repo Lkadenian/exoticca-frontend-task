@@ -1,7 +1,7 @@
-# Top Podcasts
+# Exoticca Frontend Task
 
-This application allows users to explore the top 100 podcasts from Itunes and
-its lasts episodes.
+This is the technical task for frontend developer at exoticca
+La prueba técnica para el proceso de contratación de frontend developer en exoticca
 
 ## Table of Contents
 
