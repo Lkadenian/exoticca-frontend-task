@@ -1,7 +1,7 @@
 # Exoticca Frontend Task
 
-This is the technical task for frontend developer at exoticca
-La prueba técnica para el proceso de contratación de frontend developer en exoticca
+- This is the technical task for frontend developer at exoticca
+- La prueba técnica para el proceso de contratación de frontend developer en exoticca
 
 ## Table of Contents
 
